@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Noto+Serif+Oriya:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oxygen:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@tailwind base;
+@tailwind components;
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  min-height: 100vh;
+}
+
+.bounce-box {
+  animation: bounceEffect 4s ease-in-out infinite;
+}
+
+@keyframes start {
+  0% {
+    transform: translateY(0); /* Start at original position */
+    transform: scale(0.2);
+  }
+  100% {
+    transform: translateY(0); /* End at original position */
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceEffect {
+  0% {
+    transform: translateY(0); /* Start at original position */
+  }
+  30% {
+    transform: translateY(-18px); /* Move up */
+  }
+  50% {
+    transform: translateY(0); /* Return to original position */
+  }
+  75% {
+    transform: translateY(-15px); /* Slight bounce up */
+  }
+  100% {
+    transform: translateY(0); /* End at original position */
+  }
+}
+
+.hero-title1 {
+  animation: upMove 0.7s ease-in-out forwards;
+}
+
+.hero-title2 {
+  animation: upMove 0.7s 0.5s ease-in-out forwards;
+}
+
+.hero-btn {
+  animation: upMove 0.7s 0.7s ease-in-out forwards;
+}
+
+.leftAnim {
+  animation: leftAni 1s linear forwards;
+}
+
+.rightAnim {
+  animation: rightAni  1s  linear forwards;
+}
+
+.leftAnimLine {
+  opacity: 0;
+  animation: leftAniLin 0.9s 0.8s linear forwards;
+}
+.whatsappColor{
+  background-image: linear-gradient(to right top, #10c63f, #3bc64a, #52c755, #63c760, #72c76a);
+}
+@keyframes leftAniLin {
+  0% {
+    left: -10%;
+    opacity: 0;
+  }
+  100% {
+    left: 30%;
+    opacity: 1;
+  }
+}
+
+@keyframes leftAni {
+  0% {
+    left: -30rem;
+    opacity: 0;
+  }
+  100% {
+    left: -9rem;
+    opacity: 1;
+  }
+}
+
+@keyframes rightAni {
+  0% {
+    right: -30rem;
+    opacity: 0;
+  }
+  100% {
+    right: -9rem;
+    opacity: 1;
+  }
+}
+
+@keyframes upMove {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.export-container {
+  background-image: url("/sp.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  width: 100%;
+}
+.export-container::before {
+  position: absolute;
+  content: "";
+  height: 60vh;
+  width: 100%;
+  background-image: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.726),
+    rgba(0, 0, 0, 0.103)
+  );
+}
+the design is stop 
+.cross-method{
+  clip-path: polygon(0 0, 100% 0, 100% 30%, 99% 39%, 0 79%, 0 45%, 0% 70%, 0% 30%);
+
+}
+@tailwind utilities;
