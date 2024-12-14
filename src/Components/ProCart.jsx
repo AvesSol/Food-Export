@@ -1,15 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import { FaRegEye } from "react-icons/fa";
-import { IoCallSharp } from "react-icons/io5";
 import { toast } from "react-toastify";
-// import {toast} from 'react-hot-toast';
 
-const ProCart = ({ img, color , product}) => {
+const  ProCart = ({ img, color , product}) => {
   const [productName, setProductName] = useState(`${product.title}`);
   const [quantity, setQuantity] = useState(1);
   const [unit, setUnit] = useState("");
-  const [cart, setCart] = useState([]);
 
   let cole = color;
   const units = [
@@ -47,6 +43,7 @@ const ProCart = ({ img, color , product}) => {
       // Update state with the new cart (optional)
       // toast.success("Added Successfully");
       setCart(updatedCart);
+      toast.success(`${productName} added`);
     } else {
       alert("Please select all fields");
     }
@@ -74,10 +71,9 @@ const ProCart = ({ img, color , product}) => {
         style={{ backgroundColor: `${cole}` }}
         className={`top h-[75%]  group w-full ${color} relative z-10 hover:faded`}
       >
-        <img src={product.img} alt="" className="h-[100%] w-[100%] relative z-10  object-cover " />
+        <img src={product.img} alt="" className="h-[100%] w-[100%] relative z-10  object-cover " loading="lazy"/>
 
         <div className="hover-content static z-40">
-          {/* <p style={{ backgroundColor: `${cole}` }} className="view p-5 rounded-full opacity-75 shadow-md relative z-[0]"></p> */}
           <div
             className="view1 opacity-0 z-50 min-h-[50%] py-1 w-full group-hover:opacity-100 bg-slate-200  transition-all duration-150 ease-linear
            absolute top-0 left-0 text-black"
@@ -98,13 +94,6 @@ const ProCart = ({ img, color , product}) => {
                   </option>
                 ))}
               </select>
-              {/* <input
-                type="number"
-                min="1"
-                max="1000"
-                id="unit"
-                className="rounded-md border-none p-1.5 w-fit mx-2 outline-none "
-              /> */}
             </div>
             <div className="qun p-2 flex justify-between items-start">
               <label htmlFor="qun" className="font-semibold text-sm">
@@ -127,13 +116,6 @@ const ProCart = ({ img, color , product}) => {
             >
               Add to cart
             </button>
-
-            {/* <p className="rounded-full bg-white shadow-sm size-[45px] flex justify-center items-center">
-              <FaRegEye className="text-sm" />
-            </p>
-            <p className="rounded-full bg-white shadow-sm size-[45px] flex justify-center items-center">
-              <IoCallSharp className="text-sm" />
-            </p> */}
           </div>
         </div>
       </div>

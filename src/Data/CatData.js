@@ -1,8 +1,10 @@
-import pickles from "../Images/pickles.png"
-import spices from "../Images/spices.png"
-import organic from "../Images/organic.png"
-import dryFruit from "../Images/dryF.png"
-import grains from "../Images/grains.png"
+import pickles from "../Images/Category/pickles1.png"
+import spices from "../Images/Category/spices.png"
+import organic from "../Images/Category/organic.png"
+import dryFruit from "../Images/Category/dryF.png"
+import grains from "../Images/Category/grains.png"
+import readytoeat from "../Images/Category/readytoeat1.png"
+import privatelable from "../Images/Category/privateLable1.png"
 
 
 
@@ -49,8 +51,9 @@ const category = [
         title:"READY TO EAT",
         des: "des",
         linkTitle : "readytoeat",
-        img : "https://www.ambikaglobal.com/wp-content/uploads/2023/10/pickles-img.png",
-        color: "#418248"     
+        // img : "https://www.ambikaglobal.com/wp-content/uploads/2023/10/pickles-img.png",
+        img:`${readytoeat}`,
+        color: "#a99c00"     
         
     },
     {
@@ -67,8 +70,9 @@ const category = [
         title:"PRIVATE LABELING",
         des: "des",
         linkTitle : "privatelabeling",
-        img : "https://toynamics.com/wp-content/uploads/2021/10/titel-privatelabel.svg",
-        color: "#418248"     
+        // img : "https://toynamics.com/wp-content/uploads/2021/10/titel-privatelabel.svg",
+        img:`${privatelable}`,
+        color: "#418278"     
         
     },
 ]

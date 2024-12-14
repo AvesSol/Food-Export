@@ -1,7 +1,6 @@
 import React from "react";
-import Cat from "./Cat";
 import Products from "../Components/Products"
-import productData from "../Data/productData.json"
+import productData from "../Data/productData.js"
 import { useLocation } from "react-router-dom";
 const ProductPage = () => {
 

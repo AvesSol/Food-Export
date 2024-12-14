@@ -7,15 +7,11 @@ const Cat = () => {
   let endPoint = location.pathname.split("/").pop();
 
   return (
-    <div className="bg- [#1865f4]  text-white pb-0 mb-10 w-full mt-[6rem] overflow-hidden relative flex justify-center items-start ">
+    <div className="bg- [#1865f4] h-auto  text-white pb-0 mb-10 w-full mt-[6rem] overflow-hidden relative flex justify-center items-start ">
       {/* Green Design div   */}
       {endPoint != "products" && (
         <div className="absolute w-[220vw] bg-[#f4ffef] h-[120vh] -left-72 top-[6%] sm:top-[30%] rotate-12 z-10"></div>
       )}
-      {/* {endPoint == "products" && (
-        <div className="absolute w-[220vw] bg-[#f4ffef] h-[100vh] -left-72 top-[30%]  z-10"></div>
-      )} */}
-      {/* green design div ends  */}
 
       <section
         className={` pt-[1rem] md:pt-[30rem] lg:pt-[0rem] relative z-10`}
@@ -54,12 +50,12 @@ const Cat = () => {
           </div>
 
           <div
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-y-32	mt-32"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-y-36	mt-32"
             data-aos="fade-up"
           >
             {category.map((item, index) => (
               <>
-                <Link to={`/products/${item.linkTitle}`}>
+                <Link key={index} to={`${item.linkTitle !="privatelabeling" ? `/products/${item.linkTitle}` : "#"}` }>
                   <div key={index}
                     style={{ backgroundColor: `${item.color}` }}
                     className={`bg-[${item.color}] relative min-w-[260px] h-[214px] flex justify- center mx-6 items-end p-[10px] rounded-[15px]`}
@@ -67,9 +63,12 @@ const Cat = () => {
                     <img
                       src={item.img}
                       alt=""
-                      className={`absolute -top-[40%]  max-w-[229px] ${
-                        index == 1 || index == 5 ? "max-w-[300px]" : ""
-                      }  ${index == 4 ? "-top-[50%]" : "-top-[40%]"}`}
+                      loading="lazy"
+                      className={`absolute -top-[40%]  max-w-[229px] 
+                         ${index == 1 || index == 5 ? "max-w-[300px]" : ""}
+                         ${index == 4 ? "-top-[60%] max-w-[420px] -left-20" : "-top-[40%]"}
+                         ${index == 3 || index  == 6? "-top-[55%] max-w-[200px]" : "-top-[40%]"}
+                      `}
                     />
 
                     <p

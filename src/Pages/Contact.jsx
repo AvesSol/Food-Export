@@ -1,17 +1,61 @@
 import React, { useState } from "react";
-import icon1 from "../assets/images/icon1.png";
-import icon2 from "../assets/images/icon2.png";
-import icon3 from "../assets/images/icon3.png";
-import Back1 from "../assets/images/Back1.avif";
+import icon from "../Images/AboutAndContactus/icon1.png";
+import Back1 from "../Images/AboutAndContactus/Back1.avif";
 import { FaUser } from "react-icons/fa";
+import emailjs from "emailjs-com";
 import { MdEmail } from "react-icons/md";
 import { IoIosCall } from "react-icons/io";
 import { FaPencil } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { RiWhatsappFill } from "react-icons/ri";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const [whPopup, setWhPopup] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+
+   const [user_name, setUser_name] = useState("");
+    const [user_phn, setUser_phn] = useState("");
+    const [user_email, setUser_email] = useState("");
+    const [user_mesage, setUser_mesage] = useState("");
+    const [message, setMessage] = useState("");
+
+    const sendEmail = (e) => {
+      e.preventDefault();
+      setIsSending(true);
+
+      // Template parameters
+      const templateParams = {
+        //   message: productListHTML,  // Dynamic HTML content
+        to_name: `${user_name}`,
+        to_email: `${user_email}`,
+        to_phn: `${user_phn}`,
+        user_mesage : `${user_mesage}`,
+        // message: "Thank you for reaching out to us. We are pleased to provide you with the details of the products you're interested in. Please find the product list below:",  // The message to be sent in the email
+      };
+  
+      // Send the email via EmailJS
+      emailjs
+        .send(
+          "service_z6ue2a4", // Replace with your service ID
+          "template_otn1iog", // Replace with your template ID
+          templateParams,
+          "EllD6GTp4JT4GCxfE" // Replace with your EmailJS public key (user ID)
+        )
+        .then(
+          (result) => {
+            console.log("Email sent successfully:", result.text);
+            setMessage("Email sent successfully!");
+          },
+          (error) => {
+            console.error("Error sending email:", error.text);
+            setMessage("Failed to send email.");
+          }
+        )
+        .finally(() => setIsSending(false));
+      toast.success("we'll Contact you soon");
+  
+    };
 
   return (
     <div className="ContactWrapper relative">
@@ -19,7 +63,7 @@ const Contact = () => {
       <div className={`"whatsApp absolute bottom-0 sm:bottom-12 z-[40] sm:right-12`}>
         <div
           className={`"whatsApp-popup h-[40vh] min-w-[18vw] shadow-lg bg-white  border rounded-xl overflow-hidden ${
-            whPopup ? "opacity-100 hero-title1" : "opacity-0"
+            whPopup ? "opacity-100 hero-title1" : " hidden sm:opacity-0"
           }`}
         >
           <div className="whatsappColor top h-[30%]  p-4 ">
@@ -73,7 +117,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className={`"icons text-center float-right mr-6 mt-6 mb-2 ${!whPopup ? "animate-bounce" : ""}`}>
+        <div className={`"icons text-center ml-40 sm:ml-0 float-right mr-6 mt-6 mb-2 w-fit  ${!whPopup ? "sm:animate-bounce" : ""}`}>
           <IoLogoWhatsapp
             onClick={() => {
               setWhPopup(!whPopup);
@@ -99,15 +143,9 @@ const Contact = () => {
         <div className="section w-full">
           <div className="max-w-[1200px]  px-9  relative z-50 h-fit flex justify-between items-center mx-auto flex-col md:flex-row  ">
             <div className="">
-              <p className="text-[#80b500] font-medium">WELCOME TO OUR STORE</p>
               <h1 className="font-bold text-3xl md:text-[56px] text-white text-center md:text-start leading-[4rem]">
-                Contact
+                Contact Us
               </h1>
-            </div>
-            <div className="flex gap-5 h-fit text-white font-bold items-center">
-              <li className="list-none">Home</li>
-              <div className="w-[2px] h-[14px] opacity-60 bg-white"></div>
-              <li className="list-none text-[#80b500]">Contact</li>
             </div>
           </div>
         </div>
@@ -118,7 +156,7 @@ const Contact = () => {
           <div className="flex mx-5 gap-5 flex-wrap md:flex-nowrap">
             <div className="p-[50px_30px_25px] w-[370px] shadow-md mx-auto mb-10 ">
               <img
-                src={icon1}
+                src={icon}
                 alt=""
                 className="mx-auto max-w-[80px] mb-[35px]"
               />
@@ -128,14 +166,11 @@ const Contact = () => {
               <p className="mt-3 text-center">
                 headoffice@varadindiaglobal.com
               </p>
-              {/* <p className=" text-center mt-2 mb-10">
-                headoffice@varadindiaglobal.com
-              </p>{" "} */}
             </div>
 
             <div className="p-[50px_30px_25px] w-[370px] shadow-md mx-auto mb-10 ">
               <img
-                src={icon2}
+                src={icon}
                 alt=""
                 className="mx-auto max-w-[80px] mb-[35px]"
               />
@@ -148,7 +183,7 @@ const Contact = () => {
 
             <div className="p-[50px_30px_25px] w-[370px] shadow-md mx-auto mb-10 ">
               <img
-                src={icon3}
+                src={icon}
                 alt=""
                 className="mx-auto max-w-[80px] mb-[35px]"
               />
@@ -174,13 +209,17 @@ const Contact = () => {
             <h3 className="text-[#071c1f] text-[26px] font-bold mb-[30px]">
               Contact Us
             </h3>
-            <form>
+            <form onSubmit={sendEmail}>
               <div className="flex gap-10 flex-col sm:flex-row">
                 <div className="w-full relative">
                   <input
                     type="text"
                     name=""
                     id=""
+                    required
+                    onChange={(e) => {
+                      setUser_name(e.target.value);
+                    }}
                     placeholder="Enter your name"
                     className="h-[65px] pl-[20px] pr-[40px] w-full border-[2px] border-[#e4ecf2] outline-[1px] outline-lime-400"
                   />
@@ -193,6 +232,10 @@ const Contact = () => {
                     type="email"
                     name="email"
                     id="email"
+                    required
+                    onChange={(e) => {
+                      setUser_email(e.target.value);
+                    }}
                     placeholder="Enter your email"
                     className="h-[65px] pl-[20px] pr-[40px] w-full border-[2px] border-[#e4ecf2] outline-[1px] outline-lime-400"
                   />
@@ -202,9 +245,13 @@ const Contact = () => {
               <div className="flex gap-10 mt-10">
                 <div className="w-full relative">
                   <input
-                    type="text"
+                    type="number"
                     name=""
                     id=""
+                    required
+                    onChange={(e) => {
+                      setUser_phn(e.target.value);
+                    }}
                     placeholder="Enter your number"
                     className="h-[65px] pl-[20px] pr-[40px] w-full border-[2px] border-[#e4ecf2] outline-[1px] outline-lime-400"
                   />
@@ -215,10 +262,14 @@ const Contact = () => {
               <div className="flex gap-10 mt-10">
                 <div className="w-full relative">
                   <textarea
-                    name=""
+                    name="message"
                     id=""
                     cols="30"
                     rows="10"
+                    required
+                    onChange={(e) => {
+                      setUser_mesage(e.target.value);
+                    }}
                     placeholder="Enter your message"
                     className="pt-4 pl-[20px] pr-[40px] w-full border-[2px] border-[#e4ecf2] outline-[1px] outline-lime-400"
                   ></textarea>
@@ -226,14 +277,15 @@ const Contact = () => {
                   <FaPencil className="absolute right-5 top-[20px] text-green-600 text-[1.3rem]" />
                 </div>
               </div>
-              <button className="text- relative  p-4 border-[1px] border-[#80b500]  mt-10 group hover:border hover:border-black">
+              <p>{message && <p className="mt-2 text-green-500">{message}</p>}</p>
+              <button type="submit" className=" relative z-50  p-4 border-[1px] border-[#80b500]  mt-10 group hover:border hover:border-black">
                 <span className="z-20 relative group-hover:text-black text-white font-medium">
                   {" "}
                   Send
                 </span>
-
                 <div className="absolute bg-[#80b500] w-full group-hover:w-0 transition-all duration-200 h-full top-0 right-0 z-10 mx-auto"></div>
               </button>
+              
             </form>
           </div>
         </div>

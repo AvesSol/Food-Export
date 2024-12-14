@@ -1,19 +1,37 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className='h-20 bg-slate-200  flex justify-around items-center '>
-
-
-        <div className="left text-md font-semibold text-green-800 drop-shadow-sm "> @Copyright reserved 2024 |</div>
-        <div className="right flex justify-around text-sm font-medium list-none  gap-10">
-            <li>Home</li>
-            <li>Products</li>
-            <li>About</li>
-            <li>Contact</li>
-        </div>
+    <div className="h-20 bg-slate-200  flex justify-around items-center flex-wrap ">
+      <div className="left text-md font-semibold text-green-800 drop-shadow-sm ">
+        {" "}
+        @Copyright reserved 2024 |
+      </div>
+      <div className="right flex justify-around text-sm font-medium list-none  gap-10 flex-wrap">
+        <Link to="/">
+          {" "}
+          <li>Home</li>{" "}
+        </Link>
+        <Link to="/products/allproducts">
+          {" "}
+          <li>Products</li>{" "}
+        </Link>
+        <Link to="/about">
+          {" "}
+          <li>About</li>{" "}
+        </Link>
+        <Link to="/contact">
+          {" "}
+          <li>Contact</li>{" "}
+        </Link>
+        <Link to="/cart">
+          {" "}
+          <li>Cart</li>{" "}
+        </Link>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

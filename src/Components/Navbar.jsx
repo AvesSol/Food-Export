@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { IoIosMail, IoMdClose } from "react-icons/io";
-import { IoClose, IoLocationOutline } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
 import VaradLogo from "../Images/VaradIcon.png";
 import { FaBars } from "react-icons/fa6";
 const Navbar = () => {
+
   let location = useLocation();
   let endPoint = location.pathname.split("/").pop();
 
@@ -23,19 +23,13 @@ const Navbar = () => {
       }`}
     >
       {/* // min Navbar start  */}
-      <nav className="minNav-info max-w-[1200px] mx-auto  py-3 sticky top-0">
+      <nav className="minNav-info max-w-[1200px] mx-auto  py-3 ">
         <div className="left flex justify-start items-center gap-4  flex-wrap">
-          <li className="contact-det1 flex justify-center items-center gap-1">
+          <li className="contact-det1 flex justify-center items-center gap-1 ml-4"> 
             <IoIosMail className="text-red-600" />
-            <h className="co-title1 font-semibold text-sm">Varad@webMail.com</h>
+            <h className="co-title1 font-semibold text-sm">headoffice@varadindiaglobal.com</h>
           </li>
-          <li className="contact-det2 flex justify-center items-center gap-1">
-            <IoLocationOutline className="text-red-600" />
-            <h className="co-title1 font-semibold text-sm">
-              {" "}
-              15/A, Nest Tower, NYC
-            </h>
-          </li>
+         
         </div>
       </nav>
       {/* Min navbar end  */}
@@ -51,13 +45,9 @@ const Navbar = () => {
             className="flex justify-center gap-2 items-center"
           >
             {" "}
-            <img src={VaradLogo} className="size-[60px] object-cover" alt="" />
-            <div className="right text-xl font-bold">
-              Varad Food{" "}
-              <span className="relative">
-                Products
-                <div className="leftAnimLine line absolute  -bottom-1 w-[60%] bg-[crimson] h-[2px]"></div>
-              </span>
+            <img src={VaradLogo} className="size-[60px] object-cover" alt="" loading="lazy" />
+            <div className="right text-sm sm:text-xl font-bold text-green-700">
+              Varad Food{" "} Products India Pvt Ltd 
             </div>
           </Link>
         </div>
@@ -65,16 +55,16 @@ const Navbar = () => {
           onClick={() => {
             setOpenMenu(!openMenu);
           }}
-          className=" sm:hidden text-xl mr-4"
+          className=" md:hidden text-xl mr-4"
         >
           {" "}
           <FaBars />{" "}
         </span>
         <div
-          className={`Items  sm:flex ${
+          className={`Items  md:flex ${
             openMenu
               ? "bg-[#00000082] backdrop-blur-md z-50 fixed h-screen top-0 left-0 bottom-0 right-0 flex flex-col justify-start items-center gap-4 pt-28 text-white font-bold"
-              : "hidden sm:flex sm:flex-row sm:static sm:justify-center items-center sm:pt-0 gap-7 flex-wrap sm:text-black"
+              : "hidden md:flex md:flex-row md:static md:justify-center items-center md:pt-0 gap-7 flex-wrap md:text-black"
           } 
               `}
         >
@@ -164,7 +154,7 @@ const Navbar = () => {
                   : ""
               }`}
             >
-              Cart
+              Enquiry Cart
               {JSON.parse(localStorage.getItem("cart")) && (
                 <span
                   className="absolute text-xs -top-0 -right-2 animate-bounce flex justify-center items-center size-[px] p-1 rounded-full
