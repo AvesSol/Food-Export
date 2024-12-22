@@ -78,9 +78,9 @@ const category = [
     },
 
     {
-        title:"Our Product",
+        title:"Our Brand",
         des: "des",
-        linkTitle : "ourproduct",
+        linkTitle : "ourBrand",
         // img : "https://toynamics.com/wp-content/uploads/2021/10/titel-privatelabel.svg",
         img:`${yellowPantry}`,
         color: "#82803d"     

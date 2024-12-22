@@ -1,13 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { CommonContext } from "../ContentProvider/RealtimeContext";
+import { MdOutlineDone } from "react-icons/md";
 
-const  ProCart = ({ img, color , product}) => {
-  const {setCartCount,cartCount,setCart}=useContext(CommonContext);
+const ProCart = ({ img, color, product }) => {
+  const { setCartCount, cartCount, setCart } = useContext(CommonContext);
   const [productName, setProductName] = useState(`${product.title}`);
   const [quantity, setQuantity] = useState(1);
   const [unit, setUnit] = useState("");
+  const [added, setAdded] = useState(false)
+
 
   let cole = color;
   const units = [
@@ -29,7 +32,6 @@ const  ProCart = ({ img, color , product}) => {
 
   /// Handle the "Add to Cart" logic
   const addToCart = () => {
-
     if (productName && quantity && unit) {
       const newProduct = { productName, quantity, unit };
 
@@ -44,11 +46,12 @@ const  ProCart = ({ img, color , product}) => {
 
       // Update state with the new cart (optional)
       // toast.success("Added Successfully");
-      setCartCount(cartCount+1);
+      setCartCount(cartCount + 1);
       setCart(updatedCart);
+      setAdded(true)
       toast.success(`${productName} added`);
     } else {
-      toast.warning(`choose the Unit for ${productName}`)
+      toast.warning(`choose the Unit for ${productName}`);
     }
   };
 
@@ -63,6 +66,17 @@ const  ProCart = ({ img, color , product}) => {
     setUnit(e.target.value);
   };
 
+
+  useEffect(() => {
+    // Retrieve and parse cart from localStorage
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    // Check if the product is already in the cart
+    const isAdded = cart.some((item) => item.productName === productName);
+
+    // Update the state
+    setAdded(isAdded ? true :false);
+  }, [productName]);
+
   return (
     <div className="group flex justify-between items-center flex-col h-[340px] w-[240px] shadow-lg rounded-xl overflow-hidden relative">
       {/* add datra form  */}
@@ -74,7 +88,12 @@ const  ProCart = ({ img, color , product}) => {
         style={{ backgroundColor: `${cole}` }}
         className={`top h-[75%]  group w-full ${color} relative z-10 hover:faded`}
       >
-        <img src={product.img} alt="" className="h-[100%] w-[100%] relative z-10  object-cover " loading="lazy"/>
+        <img
+          src={product.img}
+          alt=""
+          className="h-[100%] w-[100%] relative z-10  object-cover "
+          loading="lazy"
+        />
 
         <div className="hover-content static z-40">
           <div
@@ -82,7 +101,10 @@ const  ProCart = ({ img, color , product}) => {
            absolute top-0 left-0 text-black"
           >
             <div className="unit p-2 flex justify-between items-start">
-              <label htmlFor="unit" className="font-semibold text-sm text-white">
+              <label
+                htmlFor="unit"
+                className="font-semibold text-sm text-white"
+              >
                 Unit :{" "}
               </label>
               <select
@@ -115,9 +137,20 @@ const  ProCart = ({ img, color , product}) => {
 
             <button
               onClick={addToCart}
+              disabled={added ? true : false}
               className="p-1.5 bg-[#f4ffef] font-medium px-3 text-sm mx-auto rounded-md w-fit ml-2"
             >
-              Add to cart
+              {added ? (
+                <p className="added flex justify-center items-center">
+                  {" "}
+                  <span>Added</span>{" "}
+                  <span className="p-1 text-xs rounded-full bg-green-600 text-white ml-2">
+                    <MdOutlineDone />
+                  </span>{" "}
+                </p>
+              ) : (
+                "Add to cart"
+              )}
             </button>
           </div>
         </div>
@@ -127,7 +160,6 @@ const  ProCart = ({ img, color , product}) => {
       {/* bottom div start  */}
       <div className="bottom h-[25%] p-4 w-full bg-slate-50 relative z-20 text-center text-green-800 font-bold ">
         <p className="text-slate-600 drop-shadow-md"> {product.title} </p>{" "}
-        
       </div>
       {/* bottom div ends  */}
     </div>
