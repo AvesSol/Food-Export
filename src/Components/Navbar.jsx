@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { IoIosMail, IoMdClose } from "react-icons/io";
 import { Link, useLocation } from "react-router-dom";
 import VaradLogo from "../Images/VaradIcon.png";
 import { FaBars } from "react-icons/fa6";
+import { CommonContext } from "../ContentProvider/RealtimeContext";
 const Navbar = () => {
-
+  
+  const {cartCount} =useContext(CommonContext);
   let location = useLocation();
   let endPoint = location.pathname.split("/").pop();
 
@@ -155,11 +157,11 @@ const Navbar = () => {
               }`}
             >
               Enquiry Cart
-              {JSON.parse(localStorage.getItem("cart")) && (
+              {cartCount != 0 && (
                 <span
-                  className="absolute text-xs -top-0 -right-2 animate-bounce flex justify-center items-center size-[px] p-1 rounded-full
-                 bg-red-600"
-                ></span>
+                  className="absolute text-[8px] -top-2 -right-3 animate-bounce flex justify-center items-center size-[18px] p-0.5 rounded-full
+                 bg-yellow-400 text-black"
+                > {cartCount} </span>
               )}
             </li>
           </Link>

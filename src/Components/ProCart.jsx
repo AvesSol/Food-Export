@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { CommonContext } from "../ContentProvider/RealtimeContext";
 
 const  ProCart = ({ img, color , product}) => {
+  const {setCartCount,cartCount,setCart}=useContext(CommonContext);
   const [productName, setProductName] = useState(`${product.title}`);
   const [quantity, setQuantity] = useState(1);
   const [unit, setUnit] = useState("");
@@ -42,10 +44,11 @@ const  ProCart = ({ img, color , product}) => {
 
       // Update state with the new cart (optional)
       // toast.success("Added Successfully");
+      setCartCount(cartCount+1);
       setCart(updatedCart);
       toast.success(`${productName} added`);
     } else {
-      alert("Please select all fields");
+      toast.warning(`choose the Unit for ${productName}`)
     }
   };
 
@@ -75,15 +78,15 @@ const  ProCart = ({ img, color , product}) => {
 
         <div className="hover-content static z-40">
           <div
-            className="view1 opacity-0 z-50 min-h-[50%] py-1 w-full group-hover:opacity-100 bg-slate-200  transition-all duration-150 ease-linear
+            className="view1 opacity-0 z-50 min-h-[50%] py-1 w-full group-hover:opacity-100 overflow-hidden bg-[#ffffff2f] backdrop-blur-md transition-all duration-150 ease-linear
            absolute top-0 left-0 text-black"
           >
             <div className="unit p-2 flex justify-between items-start">
-              <label htmlFor="unit" className="font-semibold text-sm">
+              <label htmlFor="unit" className="font-semibold text-sm text-white">
                 Unit :{" "}
               </label>
               <select
-                className="text-sm mr-2"
+                className="text-sm mr-2 p-0.5"
                 onChange={handleUnitChange}
                 value={unit}
               >
@@ -96,7 +99,7 @@ const  ProCart = ({ img, color , product}) => {
               </select>
             </div>
             <div className="qun p-2 flex justify-between items-start">
-              <label htmlFor="qun" className="font-semibold text-sm">
+              <label htmlFor="qun" className="font-semibold text-sm text-white">
                 Quantity :{" "}
               </label>
               <input

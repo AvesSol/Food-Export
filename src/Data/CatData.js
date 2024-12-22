@@ -5,6 +5,7 @@ import dryFruit from "../Images/Category/dryF.png"
 import grains from "../Images/Category/grains.png"
 import readytoeat from "../Images/Category/readytoeat1.png"
 import privatelable from "../Images/Category/privateLable1.png"
+import yellowPantry from "../Images/Category/yellow_pentry.png"
 
 
 
@@ -73,6 +74,16 @@ const category = [
         // img : "https://toynamics.com/wp-content/uploads/2021/10/titel-privatelabel.svg",
         img:`${privatelable}`,
         color: "#418278"     
+        
+    },
+
+    {
+        title:"Our Product",
+        des: "des",
+        linkTitle : "ourproduct",
+        // img : "https://toynamics.com/wp-content/uploads/2021/10/titel-privatelabel.svg",
+        img:`${yellowPantry}`,
+        color: "#82803d"     
         
     },
 ]

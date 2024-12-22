@@ -1,5 +1,6 @@
 import React from "react";
 import ProCart from "./ProCart";
+
 const Products = ({ products, selectedCategory }) => {
   const title = selectedCategory == "allproducts" ? "Products" : products[0].categoryTitle;
 

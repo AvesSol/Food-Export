@@ -4,6 +4,7 @@ import CuminSeeds from "../Images/Spices/Cumin-Seeds.jpg"
 import RedChillyPowder from "../Images/Spices/Red-Chilly-Powder.jpg"
 import TurmericPowder from "../Images/Spices/Turmeric-Powder.jpg"
 import CommingSoon from "../Images/ReadyToEat/CommingSoon.png"
+import YeelowPantryCommingSoon from "../Images/ourProducts/yellowPantryComming.webp"
 
 import BasmatiRice from "../Images/Grains/Basmati-Rice.jpg"
 import ChanaDal from "../Images/Grains/Chana-Dal.jpg"
@@ -169,6 +170,12 @@ const productData = [
     img: `${CommingSoon}`,
     category: "readytoeat",
     categoryTitle: "Ready to Eat",
+  },
+  {
+    title: "The Yellow Pantry",
+    img: `${YeelowPantryCommingSoon}`,
+    category: "ourproduct",
+    categoryTitle: "Our Product",
   },
 ];
 

@@ -64,10 +64,10 @@ const Cat = () => {
                       src={item.img}
                       alt=""
                       loading="lazy"
-                      className={`absolute -top-[40%]  max-w-[229px] 
-                         ${index == 1 || index == 5 ? "max-w-[300px]" : ""}
+                      className={`catImg absolute -top-[40%]  max-w-[229px]
+                         ${index == 1 || index == 5  ? "max-w-[300px]" : ""}
                          ${index == 4 ? "-top-[60%] max-w-[420px] -left-20" : "-top-[40%]"}
-                         ${index == 3 || index  == 6? "-top-[55%] max-w-[200px]" : "-top-[40%]"}
+                         ${index == 3 || index  == 6 || index ==7 ? "-top-[55%] max-w-[200px]" : "-top-[40%]"}
                       `}
                     />
 

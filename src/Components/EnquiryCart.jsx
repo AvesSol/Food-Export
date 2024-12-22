@@ -1,22 +1,38 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import emailjs from "emailjs-com";
 import { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { CommonContext } from "../ContentProvider/RealtimeContext";
+import { MdDelete } from "react-icons/md";
+import { stringify } from "postcss";
 const EnquiryCart = () => {
+  const { setCartCount, cart, setCart, cartCount } = useContext(CommonContext);
+  const [isHovered, setIsHovered] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [message, setMessage] = useState("");
   const [user_name, setUser_name] = useState("");
   const [user_phn, setUser_phn] = useState("");
   const [user_email, setUser_email] = useState("");
   const [closeForm, setCloseForm] = useState(false);
-  const [clearCart, setClearCart] = useState(false);
-  const data = JSON.parse(localStorage.getItem("cart"));
+
+  const deleteItem = (pName) => {
+    const data = cart.filter((item) => {
+      return item.productName != pName;
+    });
+    localStorage.removeItem("cart");
+    const sortedCart = [...data].sort((a, b) =>
+      a.productName.localeCompare(b.productName)
+    );
+    localStorage.setItem("cart", JSON.stringify(sortedCart));
+    setCart(sortedCart);
+    setCartCount(sortedCart.length);
+  };
 
   const generateProductTable = () => {
     let tableContent = "";
-    data.forEach((product) => {
+    cart.forEach((product) => {
       tableContent += `
         <tr>
           <td>${product.productName}</td>
@@ -72,22 +88,20 @@ const EnquiryCart = () => {
         (result) => {
           console.log("Email sent successfully:", result.text);
           setMessage("Email sent successfully!");
+          setCart([]);
+          setCartCount(0);
+          localStorage.removeItem("cart");
+          toast.success("Mail send successfully");
         },
         (error) => {
           console.error("Error sending email:", error.text);
           setMessage("Failed to send email.");
+          toast.error("Something went wrong");
         }
       )
       .finally(() => setIsSending(false));
     setCloseForm(false);
-    toast.success("Mail send successfully");
-  };
-
-  if (message) {
-    localStorage.removeItem("cart");
-  }
-
-  useEffect(() => {}, [clearCart]);
+    };
 
   return (
     <div className="min-h-screen max-w-[1200px] mx-auto ">
@@ -159,10 +173,10 @@ const EnquiryCart = () => {
 
             <button
               type="submit"
-              disabled={data ? isSending : true}
+              disabled={cart.length !== 0 ? isSending : true}
               className="p-1.5 font-semibold float-right w-[80%] bg-green-600 text-white"
             >
-              {data ? (
+              {cart.length !== 0 ? (
                 "Send Mail"
               ) : (
                 <Link
@@ -206,18 +220,27 @@ const EnquiryCart = () => {
               <th className="border border-gray-400 px-4 py-2">Unit</th>
             </tr>
           </thead>
-          <tbody className="text-sm">
-            {data ? (
-              data.map((product, index) => (
-                <tr key={index} className="hover:bg-gray-100">
+          <tbody className="text-sm ">
+            {cart.length !== 0 ? (
+              cart.map((product, index) => (
+                <tr key={index} className="hover:bg-gray-100 ">
                   <td className="border border-gray-400 px-4 py-2">
                     {product.productName}
                   </td>
                   <td className="border border-gray-400 px-4 py-2">
                     {product.quantity}
                   </td>
-                  <td className="border border-gray-400 px-4 py-2">
-                    {product.unit}
+                  <td className="border border-gray-400 px-4 py-2 flex justify-between items-center">
+                    <p>{product.unit}</p>
+                    <button
+                      onClick={() => {
+                        deleteItem(product.productName);
+                      }}
+                      className="delete"
+                    >
+                      {" "}
+                      <MdDelete className="text-red-600 text-lg" />{" "}
+                    </button>
                   </td>
                 </tr>
               ))
@@ -235,16 +258,19 @@ const EnquiryCart = () => {
         >
           {isSending ? <p className="mailLoading"></p> : "Send Email"}
         </button>
-        <button
-          onClick={() => {
-            localStorage.removeItem("cart");
-            setClearCart(!clearCart);
-          }}
-          // disabled={isSending}
-          className="hero-btn opacity-0 flex justify-center mx-2 items-center rounded-sm py-3 mt-8 bg-[#facdcd] border border-[white]  w-[140px] text-sm font-bold text-green-800 shadow-md hover:-translate-y-1 transition-all duration-200 ease-linear float-right"
-        >
-          clear cart
-        </button>
+        {cart.length !== 0 && (
+          <button
+            onClick={() => {
+              localStorage.removeItem("cart");
+              setCartCount(0);
+              setCart([]);
+            }}
+            // disabled={isSending}
+            className="hero-btn opacity-0 flex justify-center mx-2 items-center rounded-sm py-3 mt-8 bg-[#facdcd] border border-[white]  w-[140px] text-sm font-bold text-green-800 shadow-md hover:-translate-y-1 transition-all duration-200 ease-linear float-right"
+          >
+            clear cart
+          </button>
+        )}
         <p>{message && <p className="mt-2 text-green-500">{message}</p>}</p>
       </div>
       {/* Table Ends  */}

@@ -11,6 +11,7 @@ import c2 from "../Images/Certification/c2.png";
 import c3 from "../Images/Certification/c3.png";
 import c4 from "../Images/Certification/c4.png";
 import c5 from "../Images/Certification/c5.png";
+import c6 from "../Images/Certification/c6.png";
 
 const Home = () => {
   return (
@@ -229,8 +230,10 @@ const Home = () => {
             <img src={c1} alt="" className=" w-[100px] object-cover " />
             <img src={c2} alt="" className=" w-[100px] object-cover " />
             <img src={c3} alt="" className=" w-[100px] object-cover " />
-            <img src={c4} alt="" className=" w-[100px] object-cover " />
-            <img src={c5} alt="" className=" w-[100px] object-cover " />
+            <img src={c4} alt="" className=" w-[100px] object-cover" />
+            <img src={c5} alt="" className=" w-[100px] object-cover mix-blend-multiply " />
+            <img src={c6} alt="" className=" w-[100px] object-cover mix-blend-multiply " />
+
           </div>
         </div>
       </div>
