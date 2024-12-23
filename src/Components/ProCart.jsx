@@ -103,7 +103,7 @@ const ProCart = ({ img, color, product }) => {
             <div className="unit p-2 flex justify-between items-start">
               <label
                 htmlFor="unit"
-                className="font-semibold text-sm text-white"
+                className="font-semibold text-sm text-white drop-shadow-lg"
               >
                 Unit :{" "}
               </label>
@@ -121,7 +121,7 @@ const ProCart = ({ img, color, product }) => {
               </select>
             </div>
             <div className="qun p-2 flex justify-between items-start">
-              <label htmlFor="qun" className="font-semibold text-sm text-white">
+              <label htmlFor="qun" className="font-semibold text-sm text-white drop-shadow-lg">
                 Quantity :{" "}
               </label>
               <input

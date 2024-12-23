@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { CommonContext } from "../ContentProvider/RealtimeContext";
 import { MdDelete } from "react-icons/md";
-import { stringify } from "postcss";
+// import { stringify } from "postcss";
+import WhatsApp from "./WhatsApp"
 const EnquiryCart = () => {
   const { setCartCount, cart, setCart, cartCount } = useContext(CommonContext);
   const [isHovered, setIsHovered] = useState(false);
@@ -104,7 +105,8 @@ const EnquiryCart = () => {
     };
 
   return (
-    <div className="min-h-screen max-w-[1200px] mx-auto ">
+    <div className="min-h-screen max-w-[1200px] mx-auto relative ">
+      <WhatsApp/>
       {/* taking user information start   */}
       {closeForm && (
         <div className="userInfo  fixed top-0 left-0 right-0 bottom-0 z-50 backdrop-blur-sm bg-[#0000006e] flex justify-center items-center">

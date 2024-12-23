@@ -5,9 +5,7 @@ import dryFruit from "../Images/Category/dryF.png"
 import grains from "../Images/Category/grains.png"
 import readytoeat from "../Images/Category/readytoeat1.png"
 import privatelable from "../Images/Category/privateLable1.png"
-import yellowPantry from "../Images/Category/yellow_pentry.png"
-
-
+import yellowPantry from "../Images/Category/TM1.png"
 
 const category = [
 

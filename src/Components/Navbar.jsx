@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { IoIosMail, IoMdClose } from "react-icons/io";
 import { Link, useLocation } from "react-router-dom";
-import VaradLogo from "../Images/VaradIcon.png";
+import VaradLogo from "../Images/varadIcon.png";
 import { FaBars } from "react-icons/fa6";
 import { CommonContext } from "../ContentProvider/RealtimeContext";
 const Navbar = () => {
@@ -29,7 +29,8 @@ const Navbar = () => {
         <div className="left flex justify-start items-center gap-4  flex-wrap">
           <li className="contact-det1 flex justify-center items-center gap-1 ml-4"> 
             <IoIosMail className="text-red-600" />
-            <h className="co-title1 font-semibold text-sm">headoffice@varadindiaglobal.com</h>
+            <a href="mailto:headoffice@varadindiaglobal.com" target="_blank" rel="noopener noreferrer">
+            <h className="co-title1 font-semibold text-sm ">headoffice@varadindiaglobal.com</h></a>
           </li>
          
         </div>
@@ -40,16 +41,16 @@ const Navbar = () => {
       <nav
         className={`Navbar flex justify-between items-center min-h-16 max-w-[1200px] mx-auto flex-wrap relative`}
       >
-        <div className="logo font-bold">
+        <div className="logo font-bold w-[80%] sm:w-fit">
           <Link
             onClick={closeWhileNavigate}
             to="/"
-            className="flex justify-center gap-2 items-center"
+            className="flex justify-start sm:justify-center gap-2 items-center"
           >
             {" "}
             <img src={VaradLogo} className="size-[60px] object-cover" alt="" loading="lazy" />
-            <div className="right text-sm sm:text-xl font-bold text-green-700">
-              Varad Food{" "} Products India Pvt Ltd 
+            <div className="right text-xl  sm:text-xl font-bold text-green-700">
+              Varad Food{" "} Products India Pvt. Ltd. 
             </div>
           </Link>
         </div>
@@ -105,7 +106,7 @@ const Navbar = () => {
           {/* close menu ends  */}
           <Link onClick={closeWhileNavigate} className="cursor-pointer" to="/">
             <li
-              className={`items-Links list-none font-semibold text-sm hover:text-green-600 hover:-translate-y-1 duration-200 transition-all ${
+              className={`items-Links list-none font-semibold text-sm hover:text-green-600 hover:-translate-y-1  transition-transform duration-200    ${
                 endPoint == ""
                   ? "text-green-600 border-b py-1 border-green-700 hover:translate-y-0 "
                   : ""
@@ -120,7 +121,7 @@ const Navbar = () => {
             to="/products/allproducts"
           >
             <li
-              className={`items-Links list-none font-semibold text-sm hover:text-green-600 hover:-translate-y-1 duration-200 transition-all ${
+              className={`items-Links list-none font-semibold text-sm hover:text-green-600 hover:-translate-y-1  transition-transform duration-200    ${
                 location.pathname.split("/")[1] == "products"
                   ? "text-green-600 border-b py-1 border-green-700 hover:translate-y-0"
                   : ""
@@ -135,7 +136,7 @@ const Navbar = () => {
             to="/about"
           >
             <li
-              className={`items-Links list-none font-semibold text-sm hover:text-green-600 hover:-translate-y-1 duration-200 transition-all ${
+              className={`items-Links list-none font-semibold text-sm hover:text-green-600 hover:-translate-y-1  transition-transform duration-200    ${
                 endPoint == "about"
                   ? "text-green-600 border-b py-1 border-green-700 hover:translate-y-0"
                   : ""
@@ -150,7 +151,7 @@ const Navbar = () => {
             to="/cart"
           >
             <li
-              className={`items-Links relative list-none font-semibold text-sm hover:text-green-600 hover:-translate-y-1 duration-200 transition-all ${
+              className={`items-Links relative list-none font-semibold text-sm hover:text-green-600 hover:-translate-y-1  transition-transform duration-200    ${
                 endPoint == "cart"
                   ? "text-green-600 border-b py-1 border-green-700 hover:translate-y-0"
                   : ""
@@ -171,7 +172,7 @@ const Navbar = () => {
             to="/contact"
           >
             <li
-              className={`items-Links list-none font-semibold text-sm hover:text-green-600 hover:-translate-y-1 duration-200 transition-all ${
+              className={`items-Links list-none font-semibold text-sm hover:text-green-600 hover:-translate-y-1  transition-transform duration-200    ${
                 endPoint == "contact"
                   ? "text-green-600 border-b py-1 border-green-700 hover:translate-y-0"
                   : ""

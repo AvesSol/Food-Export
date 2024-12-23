@@ -4,7 +4,7 @@ import CuminSeeds from "../Images/Spices/Cumin-Seeds.jpg"
 import RedChillyPowder from "../Images/Spices/Red-Chilly-Powder.jpg"
 import TurmericPowder from "../Images/Spices/Turmeric-Powder.jpg"
 import CommingSoon from "../Images/ReadyToEat/CommingSoon.png"
-import YeelowPantryCommingSoon from "../Images/ourBrand/yellow_pentry.png"
+import YeelowPantryCommingSoon from "../Images/ourBrand/tmLogo.png"
 
 import BasmatiRice from "../Images/Grains/Basmati-Rice.jpg"
 import ChanaDal from "../Images/Grains/Chana-Dal.jpg"

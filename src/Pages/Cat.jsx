@@ -68,7 +68,7 @@ const Cat = () => {
                          ${index == 1 || index == 5  ? "max-w-[300px]" : ""}
                          ${index == 4 ? "-top-[60%] max-w-[420px] -left-20" : "-top-[40%]"}
                          ${index == 3 || index  == 6 ? "-top-[55%] max-w-[200px]" : "-top-[40%]"}
-                         ${index ==7 ? "max-w-[350px] -top-[80%] -left-14" : "-top-[40%]"}
+                         ${index ==7 ? "max-w-[350px] -top-[80%] -left-14 drop-shadow-none" : "-top-[40%]"}
                       `}
                     />
 

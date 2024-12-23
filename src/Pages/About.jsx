@@ -8,6 +8,7 @@ import vaishnavi from "../Images/ProfileImages/vaishnavi.jpeg"
 import ankush from "../Images/ProfileImages/ankush.jpg"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import WhatsApp from "../Components/WhatsApp";
 
 const About = () => {
   const settings = {
@@ -49,7 +50,9 @@ const About = () => {
   };
 
   return (
-    <div className="AboutWrapper">
+    <div className="AboutWrapper relative">
+            <WhatsApp/>
+
       <div
         className="HeroSection  h-[300px] bg-cover bg-center bg-no-repeat    relative flex  items-center"
         style={{ backgroundImage: `url(${Back1})` }}

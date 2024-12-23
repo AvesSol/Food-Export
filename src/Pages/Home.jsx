@@ -6,16 +6,18 @@ import { GoGoal } from "react-icons/go";
 import { SlDiamond } from "react-icons/sl";
 import Cat from "../Pages/Cat";
 import { Link } from "react-router-dom";
-import c1 from "../Images/Certification/c1.jpg";
+import c1 from "../Images/Certification/c1.png";
 import c2 from "../Images/Certification/c2.png";
 import c3 from "../Images/Certification/c3.png";
 import c4 from "../Images/Certification/c4.png";
 import c5 from "../Images/Certification/c5.png";
 import c6 from "../Images/Certification/c6.png";
+import WhatsApp from "../Components/WhatsApp";
 
 const Home = () => {
   return (
-    <div className="wrapper max-w-[100vw] min-h-[100vh]">
+    <div className="wrapper max-w-[100vw] min-h-[100vh] relative">
+      <WhatsApp />
       <HeroSection />
 
       {/* vision section start  */}
@@ -205,7 +207,7 @@ const Home = () => {
           ></div>
         </h1>
 
-        <div className="certificate w-full min-h-[50vh] bg-[#384b4b ] bg-[#f4ffef] flex flex-col md:flex-row justify-around items-center  overflow-hidden shadow-md  ">
+        <div className="certificate w-full min-h-[50vh] bg-[#384b4b ] bg-[#f4ffef] flex gap-4 sm:gap-1 flex-col md:flex-row justify-around items-center  overflow-hidden shadow-md  ">
           <div className="left md:w-[30%]">
             <h1
               data-aos="slide-up"
@@ -231,9 +233,16 @@ const Home = () => {
             <img src={c2} alt="" className=" w-[100px] object-cover " />
             <img src={c3} alt="" className=" w-[100px] object-cover " />
             <img src={c4} alt="" className=" w-[100px] object-cover" />
-            <img src={c5} alt="" className=" w-[100px] object-cover mix-blend-multiply " />
-            <img src={c6} alt="" className=" w-[100px] object-cover mix-blend-multiply " />
-
+            <img
+              src={c5}
+              alt=""
+              className=" w-[100px] object-cover mix-blend-multiply "
+            />
+            <img
+              src={c6}
+              alt=""
+              className=" w-[100px] object-cover mix-blend-multiply "
+            />
           </div>
         </div>
       </div>
