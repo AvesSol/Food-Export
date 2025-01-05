@@ -74,7 +74,7 @@ const Contact = () => {
         ></div>
 
         <div className="section w-full">
-          <div className="max-w-[1200px]  px-9  relative z-50 h-fit flex justify-between items-center mx-auto flex-col md:flex-row  ">
+          <div className="max-w-[1200px]  px-9  relative z-30 h-fit flex justify-between items-center mx-auto flex-col md:flex-row  ">
             <div className="">
               <h1 className="font-bold text-3xl md:text-[56px] text-white text-center md:text-start leading-[4rem]">
                 Contact Us

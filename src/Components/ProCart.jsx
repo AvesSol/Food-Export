@@ -11,7 +11,6 @@ const ProCart = ({ img, color, product }) => {
   const [unit, setUnit] = useState("");
   const [added, setAdded] = useState(false)
 
-
   let cole = color;
   const units = [
     "kg",
@@ -158,12 +157,14 @@ const ProCart = ({ img, color, product }) => {
       {/* top div end  */}
 
       {/* bottom div start  */}
-      <div className="bottom h-[25%] p-4 w-full bg-slate-50 relative z-20 text-center text-green-800 font-bold ">
-        <p className="text-slate-600 drop-shadow-md"> {product.title} </p>{" "}
+      <div className="bottom h-[27%] p-4 w-full bg-slate-50 relative z-20 text-center text-green-800 font-bold pb-0.5 ">
+        <p className="text-slate-600 drop-shadow-md"> {product.title}
+          
+        {product.flavours && <h2 className="text-green-400 text-sm drop-shadow-sm my-1 font-medium">  ({product.flavours  })</h2> }</p>
       </div>
       {/* bottom div ends  */}
     </div>
-  );
+  ); 
 };
 
 export default ProCart;

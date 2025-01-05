@@ -4,8 +4,8 @@ import Banner1 from "../Images/AboutAndContactus/Banner.png";
 import icon1 from "../Images/AboutAndContactus/gears.png";
 import icon2 from "../Images/AboutAndContactus/mechanic.png";
 import icon3 from "../Images/AboutAndContactus/sustainable-energy.png";
-import vaishnavi from "../Images/ProfileImages/vaishnavi.jpeg"
-import ankush from "../Images/ProfileImages/ankush.jpg"
+import vaishnavi from "../Images/ProfileImages/vaishnavi.jpeg";
+import ankush from "../Images/ProfileImages/ankush.jpg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import WhatsApp from "../Components/WhatsApp";
@@ -51,7 +51,7 @@ const About = () => {
 
   return (
     <div className="AboutWrapper relative">
-            <WhatsApp/>
+      <WhatsApp />
 
       <div
         className="HeroSection  h-[300px] bg-cover bg-center bg-no-repeat    relative flex  items-center"
@@ -167,15 +167,14 @@ const About = () => {
             Leadership
           </h2>
           <h2 className="text-[20px] mb-10 md:text-md text-center font-bold text-[#071c1f]">
-             The visionary leadership of Ms. Vaishnavi Mandhani and
-            Mr. Ankush Mandhani has been instrumental in driving the companys
-            growth and success. Their innovative strategies and customer-centric
-            approach have established strong client relationships and paved the
-            way for a successful future.
+            The visionary leadership of Ms. Vaishnavi Mandhani and Mr. Ankush
+            Mandhani has been instrumental in driving the companys growth and
+            success. Their innovative strategies and customer-centric approach
+            have established strong client relationships and paved the way for a
+            successful future.
           </h2>
 
           <div className="flex mt-10 gap-7 lg:flex-row flex-col items-center justify-center ">
-
             <div
               className="w-[300px] bg-white shadow-md  p-[45px_20px_25px] hover:bg-[#071c1f] transition-all duration-200 group "
               style={{ boxShadow: "0 16px 32px 0 rgba(7, 28, 31, 0.1)" }}
@@ -192,7 +191,7 @@ const About = () => {
                 Manager
               </h3>
               <p className="text-center group-hover:text-white font-bold mt-5 mb-10">
-              Ms. Vaishnavi Mandhani
+                Ms. Vaishnavi Mandhani
               </p>
             </div>
 
@@ -209,10 +208,10 @@ const About = () => {
               </div>
 
               <h3 className="text-center mt-6 text-[#80b500] font-bold opacity-0">
-               CEO  
+                CEO
               </h3>
               <p className="text-center group-hover:text-white font-bold mt-5 mb-10">
-              Mr. Ankush Mandhani
+                Mr. Ankush Mandhani
               </p>
             </div>
           </div>
