@@ -47,6 +47,15 @@ import NonBasmati from "../Images/Organic/NonBasmati.png"
 import RedRajma from "../Images/Organic/RedRajma.png"
 import Ragi from "../Images/Organic/Ragi.png"
 
+// Mangos 
+import ratnagiri_Mangos from "../Images/Mangos/ratnagiri_mango.webp"
+import pairi_Mangos from "../Images/Mangos/pairi_Mangos.webp"
+import kesar_Mangos from "../Images/Mangos/kesar_mango1.webp"
+import hapus1_Mangos from "../Images/Mangos/hapus1_Mangos.webp"
+import hapus_Mangos from "../Images/Mangos/hapus_Mangos.webp"
+import devgad_Mangos from "../Images/Mangos/devgad_Mangos.webp"
+import alphonso_Mangos from "../Images/Mangos/alphonso_Mangos.webp"
+
 const productData = [
   
   // Spices
@@ -294,6 +303,49 @@ const productData = [
     category: "ourBrand",
     categoryTitle: "Our Brand",
   },
+  // Mangos 
+  {
+    title: "Ratnagiri Hapus | Aphonso Mango",
+    img: `${ratnagiri_Mangos}`,
+    category: "mangoes",
+    categoryTitle: "Mangoes",
+  },
+  {
+    title: "Pairi Mango",
+    img: `${pairi_Mangos}`,
+    category: "mangoes",
+    categoryTitle: "Mangoes",
+  },
+  {
+    title: "Kesar Mango",
+    img: `${kesar_Mangos}`,
+    category: "mangoes",
+    categoryTitle: "Mangoes",
+  },
+  {
+    title: "Alphonso Mango Pulp Tin: Pure, Premium & Delicious",
+    img: `${hapus1_Mangos}`,
+    category: "mangoes",
+    categoryTitle: "Mangoes",
+  },
+  {
+    title: "Hapus | Aphonso Mango",
+    img: `${hapus_Mangos}`,
+    category: "mangoes",
+    categoryTitle: "Mangoes",
+  },
+  {
+    title: "Devgad Alphonso Mango | Devgad Mango | Devgad Hapus",
+    img: `${devgad_Mangos}`,
+    category: "mangoes",
+    categoryTitle: "Mangoes",
+  },
+  {
+    title: "Alphonso Mangos Cubes",
+    img: `${alphonso_Mangos}`,
+    category: "mangoes",
+    categoryTitle: "Mangoes",
+  },
   {
     title: "Pickles & Chutney",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5svAg3uS4g2_iX0PODWHmirnh8cBcdvHRzw&s",
@@ -306,6 +358,9 @@ const productData = [
     category: "readytoeat",
     categoryTitle: "Ready to Eat",
   },
+  
 ];
 
 export default productData;
+// Todo 
+// want to add mangos 

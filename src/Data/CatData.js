@@ -6,6 +6,7 @@ import grains from "../Images/Category/grains.png"
 import readytoeat from "../Images/Category/readytoeat1.png"
 import privatelable from "../Images/Category/privateLable1.png"
 import yellowPantry from "../Images/Category/TM1.png"
+import Mangos from "../Images/Category/mangoes.png"
 
 const category = [
 
@@ -82,6 +83,16 @@ const category = [
         // img : "https://toynamics.com/wp-content/uploads/2021/10/titel-privatelabel.svg",
         img:`${yellowPantry}`,
         color: "#82803d"     
+        
+    },
+
+    {
+        title:"Mangoes",
+        des: "des",
+        linkTitle : "mangoes",
+        // img : "https://toynamics.com/wp-content/uploads/2021/10/titel-privatelabel.svg",
+        img:`${Mangos}`,
+        color: "#bf8b00"     
         
     },
 ]
