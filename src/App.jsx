@@ -1,4 +1,6 @@
+import React from "react";
 import { useEffect, useState } from "react";
+// Add these imports at the top of your index.js or App.js file
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";

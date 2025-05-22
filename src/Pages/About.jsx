@@ -6,8 +6,6 @@ import icon2 from "../Images/AboutAndContactus/mechanic.png";
 import icon3 from "../Images/AboutAndContactus/sustainable-energy.png";
 import vaishnavi from "../Images/ProfileImages/vaishnavi.jpeg";
 import ankush from "../Images/ProfileImages/ankush.jpg";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import WhatsApp from "../Components/WhatsApp";
 
 const About = () => {

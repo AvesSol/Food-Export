@@ -10,7 +10,7 @@ const Cat = () => {
     <div className="bg- [#1865f4] h-auto  text-white pb-0 mb-10 w-full mt-[6rem] overflow-hidden relative flex justify-center items-start ">
       {/* Green Design div   */}
       {endPoint != "products" && (
-        <div className="absolute w-[220vw] bg-[#f4ffef] h-[120vh] -left-72 top-[6%] sm:top-[30%] rotate-12 z-10"></div>
+        <div className="absolute w-[220vw] bg-[#f4ffef] h-[160vh] -left-72 top-[6%] sm:top-[30%] rotate-12 z-10"></div>
       )}
 
       <section
@@ -70,6 +70,7 @@ const Cat = () => {
                          ${index == 3 || index  == 6  ? "-top-[55%] max-w-[200px]" : "-top-[40%]"}
                          ${index ==7  ? "max-w-[350px] -top-[80%] -left-14 drop-shadow-none" : "-top-[40%]"}
                          ${index == 8 ? "drop-shadow-none" : ""}
+                         ${index == 9 ? "drop-shadow-non size-[200px] mt-8 w-[100%] rounded-md mx-auto" : ""}
                       `}
                     />
 

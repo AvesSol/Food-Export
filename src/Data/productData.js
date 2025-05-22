@@ -346,6 +346,94 @@ const productData = [
     category: "mangoes",
     categoryTitle: "Mangoes",
   },
+
+  
+    // first  
+{
+    title: "Eco-Friendly Ganesh Murthi",
+    img: `https://handicraftbazaar.in/cdn/shop/products/Ganeshji2_700x700.jpg?v=1675250385`,
+    category: "festival",
+    categoryTitle: "Festivals"
+  },
+  {
+    title: "Diwali Diyas & Candles",
+    img: `https://t3.ftcdn.net/jpg/09/70/69/02/360_F_970690201_mVA8IG5UZtoazDgHSAcms9xAcingYbG7.jpg`,
+    category: "festival",
+    categoryTitle: "Festivals"
+  },
+  {
+    title: "Pooja Thali Sets",
+    img: `https://t4.ftcdn.net/jpg/06/14/80/29/360_F_614802907_zVdsMjj0iE2pHGC9sHXjFCG8vYLu8eDf.jpg`,
+    category: "festival",
+    categoryTitle: "Festivals"
+  },
+  {
+    title: "Toran & Rangoli Decor",
+    img: `https://png.pngtree.com/png-clipart/20221020/original/pngtree-diwali-decoration-with-diya-and-rangoli-png-image_8707000.png`,
+    category: "festival",
+    categoryTitle: "Festivals"
+  },
+  {
+    title: "Festival Sweets & Dry Fruits",
+    img: `https://m.media-amazon.com/images/I/81NE8+FddOL._AC_UF1000,1000_QL80_.jpg`,
+    category: "festival",
+    categoryTitle: "Festivals"
+  },
+  {
+    title: "Brass & Copper Pooja Items",
+    img: `https://m.media-amazon.com/images/I/81pSlpv+SKL._AC_UF894,1000_QL80_.jpg`,
+    category: "festival",
+    categoryTitle: "Festivals"
+  },
+  {
+    title: "Haldi Kumkum & Chandan Paste",
+    img: `https://mypoojaghar.com/cdn/shop/products/HaldiKumkumDibbi11.jpg?v=1675671507`,
+    category: "festival",
+    categoryTitle: "Festivals"
+  },
+  {
+    title: "Agarbatti & Dhoop",
+    img: `https://m.media-amazon.com/images/I/71vjTg-67UL._AC_UF894,1000_QL80_.jpg`,
+    category: "festival",
+    categoryTitle: "Festivals"
+  },
+  {
+    title: "Laxmi-Ganesha Coins & Idols",
+    img: `https://m.media-amazon.com/images/I/81Uk-yRZtGL._AC_UF894,1000_QL80_.jpg`,
+    category: "festival",
+    categoryTitle: "Festivals"
+  },
+  {
+    title: "Handcrafted Festive Gift Boxes",
+    img: `https://kraftedwithhappiness.com/cdn/shop/files/FestiveHandcraftedGiftBoxSet_800x.jpg?v=1698394261`,
+    category: "festival",
+    categoryTitle: "Festivals"
+  },
+  {
+    title: "Navratri & Karwa Chauth Essentials",
+    img: `https://etvbharatimages.akamaized.net/etvbharat/prod-images/19-10-2024/1200-900-22715469-550-22715469-1729336588902.jpg`,
+    category: "festival",
+    categoryTitle: "Festivals"
+  },
+  {
+    title: "Rakhi & Rakhi Gift Hampers",
+    img: `https://m.media-amazon.com/images/I/91XQyPtZ4TL.jpg`,
+    category: "festival",
+    categoryTitle: "Festivals"
+  },
+  {
+    title: "Chunri & Mata Ki Chunri",
+    img: `https://m.media-amazon.com/images/I/71mR0a3D0RL._AC_UF894,1000_QL80_.jpg`,
+    category: "festival",
+    categoryTitle: "Festivals"
+  },
+  {
+    title: "Handcrafted Decorative Items",
+    img: `https://trovecraftindia.com/cdn/shop/files/Gangaur.webp?v=1714280010&width=3840`,
+    category: "festival",
+    categoryTitle: "Festivals"
+  },
+  // last 
   {
     title: "Pickles & Chutney",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5svAg3uS4g2_iX0PODWHmirnh8cBcdvHRzw&s",

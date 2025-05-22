@@ -55,7 +55,7 @@ const UserInfoForm = ({ closeForm, setCloseForm }) => {
 
   return (
     <div className="userInfo overflow-y-auto fixed top-0 left-0 right-0 bottom-0 z-50 backdrop-blur-sm bg-[#000000b7] flex justify-center items-center">
-      <div className="formwrapper bg-white p-2 sm:px-8 py-3 h-auto">
+      <div className="formwrapper bg-white p-2 w-[95vw] sm:w-fit px-4 sm:px-8 py-3 h-auto">
         <div className="closeform w-[100%] flex justify-between items-center text-2xl mb-4">
           <p className="font-semibold relative pb-0.5">
             Contact

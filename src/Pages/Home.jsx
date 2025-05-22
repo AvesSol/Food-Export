@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import HeroSection from "../Components/HeroSection";
 import { GoGoal } from "react-icons/go";
 import { SlDiamond } from "react-icons/sl";
@@ -13,6 +11,8 @@ import c4 from "../Images/Certification/c4.png";
 import c5 from "../Images/Certification/c5.png";
 import c6 from "../Images/Certification/c6.png";
 import WhatsApp from "../Components/WhatsApp";
+import { Caraousel } from "../Components/Caraousel";
+import Videos from "../Components/Videos";
 
 const Home = () => {
   return (
@@ -138,7 +138,7 @@ const Home = () => {
         <div className="export-container h-[60vh] w-full bg-slate-50 relative ">
           {/* added bg image to this div   */}
           {/* .absolute content start  */}
-          <div className="service-content w-[80%] flex-wrap lg:py-7 shadow-lg absolute -bottom-16 left-[50%] -translate-x-[50%] flex justify-center items-center gap-12 py-4  min-h-[14vh] px-4 bg-[#ffffff] z-50 ">
+          <div className="service-content w-[80%] flex-wrap lg:py-7 shadow-lg absolute -bottom-16 left-[50%] -translate-x-[50%] flex justify-center items-center gap-12 py-4  min-h-[14vh] px-4 bg-[#ffffff] z-40 ">
             {/* SH1  */}
             <div
               data-aos="fade-up"
@@ -247,6 +247,46 @@ const Home = () => {
         </div>
       </div>
       {/* Section 4 ends  */}
+
+      <div className="caraousel">
+     <h1
+          data-aos="fade"
+          className="pro-title px-1 sm:px-0 font-bold text-6xl my-20 relative text-center w-fit mx-auto"
+        >
+          Events
+          <div
+            data-aos="fade-right"
+            data-aos-delay="200"
+            className="leftAnimLine line absolute  -bottom-3 left-0 w-[40%] bg-green-600 h-[2px]"
+          ></div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="200"
+            className="leftAnimLine line absolute  -bottom-2 w-[20%] bg-green-600 h-[2px]"
+          ></div>
+        </h1>
+      <Videos/>
+     </div>
+
+     <div className="caraousel">
+     <h1
+          data-aos="fade"
+          className="pro-title px-1 sm:px-0 font-bold text-6xl my-20 relative text-center w-fit mx-auto"
+        >
+          Indus Foods
+          <div
+            data-aos="fade-right"
+            data-aos-delay="200"
+            className="leftAnimLine line absolute  -bottom-3 left-0 w-[40%] bg-green-600 h-[2px]"
+          ></div>
+          <div
+            data-aos="fade-up"
+            data-aos-delay="200"
+            className="leftAnimLine line absolute  -bottom-2 w-[20%] bg-green-600 h-[2px]"
+          ></div>
+        </h1>
+      <Caraousel/>
+     </div>
 
       <br />
       <br />

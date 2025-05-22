@@ -7,6 +7,7 @@ import readytoeat from "../Images/Category/readytoeat1.png"
 import privatelable from "../Images/Category/privateLable1.png"
 import yellowPantry from "../Images/Category/TM1.png"
 import Mangos from "../Images/Category/mangoes.png"
+import Festivals from "../Images/Category/Festivals.webp"
 
 const category = [
 
@@ -95,6 +96,18 @@ const category = [
         color: "#bf8b00"     
         
     },
+
+    {
+        title:"Festivals",
+        des: "des",
+        linkTitle : "festival",
+        // img : "https://toynamics.com/wp-content/uploads/2021/10/titel-privatelabel.svg",
+        img:`${Festivals}`,
+        color: "#ff95ff"     
+        
+    },
+
+
 ]
 
 export default  category;
